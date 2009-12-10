@@ -5,7 +5,7 @@ rescue LoadError
   exit
 end
 
-require 'blueprints'
+require File.dirname(__FILE__) + '/blueprints'
 
 plugin_spec_dir = File.dirname(__FILE__)
 ActiveRecord::Base.logger = Logger.new(plugin_spec_dir + "/debug.log")

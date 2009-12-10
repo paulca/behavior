@@ -5,7 +5,8 @@ module Behavior
     base.class_eval do
       def config
         Behavior::Configuration.new
-      end
+      end      
+      helper_method :config if respond_to?(:helper_method)
     end
   end
   
@@ -24,6 +25,10 @@ module Behavior
     
     def all
       meta.keys
+    end
+    
+    def update(key,value)
+      BehaviorConfig.find_by_key(key.to_s).update_attribute(:value,value)
     end
   end
   
