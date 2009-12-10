@@ -27,8 +27,11 @@ module Behavior
       meta.keys
     end
     
-    def update(key,value)
-      BehaviorConfig.find_by_key(key.to_s).update_attribute(:value,value)
+    def update(attrs = {})
+      attrs.each do |key,value|
+        result = BehaviorConfig.find_by_key(key.to_s)
+        result.update_attribute(:value, value) if result
+      end
     end
   end
   

@@ -34,7 +34,7 @@ describe Behavior::Configuration do
   
   describe "#update" do
     it "should let me update the config" do
-      config.update(:email_address, 'joe@putplace.com')
+      config.update(:email_address => 'joe@putplace.com')
       BehaviorConfig.find_by_key('email_address').value.should == "joe@putplace.com"
     end
   end
