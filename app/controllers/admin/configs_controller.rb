@@ -1,4 +1,4 @@
-class Admin::ConfigsController < ActionController::Base
+class Admin::ConfigsController < ApplicationController
   
   layout Behavior::Settings.layout
   Behavior::Settings.before_filters.each do |filter|

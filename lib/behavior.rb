@@ -3,13 +3,19 @@ module Behavior
   def self.included(base)
     base.class_eval do
       def config
-        Behavior::Configuration.new
+        Behavior::Base.new
       end      
       helper_method :config if respond_to?(:helper_method)
     end
   end
   
-  class Configuration
+  class << self
+    def config
+      Behavior::Base.new
+    end
+  end
+  
+  class Base
     def meta
       HashWithIndifferentAccess.new(YAML.load_file(Behavior::Settings.config_file))
     end

@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
-describe Behavior::Configuration do
+describe Behavior do
 
   load_schema
   include Behavior
@@ -12,7 +12,7 @@ describe Behavior::Configuration do
   
   describe ".config" do
     it "should wonder why" do
-      config.should be_a_kind_of(Behavior::Configuration)
+      config.should be_a_kind_of(Behavior::Base)
     end
     
     it "should allow accessing the config" do
