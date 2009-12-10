@@ -1,6 +1,9 @@
 class Admin::ConfigsController < ActionController::Base
   
-  helper :all
+  layout Behavior::Settings.layout
+  Behavior::Settings.before_filters.each do |filter|
+    before_filter filter
+  end
   
   def show
     @configs = config.all

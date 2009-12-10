@@ -43,6 +43,22 @@ module Behavior
       def config_file=(file)
         @config_file = file
       end
+      
+      def layout
+        @layout ||= 'admin'
+      end
+      
+      def layout=(layout_choice)
+        @layout = layout_choice
+      end
+      
+      def before_filters
+        @before_filters ||= []
+      end
+      
+      def before_filters=(filters)
+        @before_filters = filters
+      end
     end
   end
   
