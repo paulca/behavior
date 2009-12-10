@@ -1,5 +1,4 @@
 require 'active_support'
-# Behavior
 module Behavior
   def self.included(base)
     base.class_eval do
