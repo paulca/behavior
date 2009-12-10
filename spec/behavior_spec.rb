@@ -16,11 +16,15 @@ describe Behavior::Configuration do
     end
     
     it "should allow accessing the config" do
-      config[:email_address][:name].should == "Email Address"
+      config.meta[:email_address][:name].should == "Email Address"
     end
     
     it "should give me all the keys" do
       config.all.should == ["email_address"]
+    end
+    
+    it "should get me my value" do
+      config[:email_address].should == "paul@rslw.com"
     end
   end
   

@@ -10,16 +10,17 @@ module Behavior
   end
   
   class Configuration
-    def config
+    def meta
       HashWithIndifferentAccess.new(YAML.load_file(Behavior::Settings.config_file))
     end
     
     def [](key)
-      config[key]
+      result = BehaviorConfig.find_by_key(key.to_s)
+      result.value if result
     end
     
     def all
-      config.keys
+      meta.keys
     end
   end
   
