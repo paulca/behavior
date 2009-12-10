@@ -15,8 +15,11 @@ module Behavior
     end
     
     def [](key)
-      result = BehaviorConfig.find_by_key(key.to_s)
-      result.value if result
+      begin
+        BehaviorConfig.find_by_key(key.to_s).value
+      rescue NoMethodError
+        meta[key][:default]
+      end
     end
     
     def all
