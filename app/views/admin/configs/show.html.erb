@@ -1,11 +1,5 @@
 <h2>Edit Configuration</h2>
 
-<%- if !flash[:notice].blank? -%>
-  <div class="notice">
-    <%= flash[:notice] %>
-  </div>
-<%- end -%>
-
 <%- form_tag admin_config_path, :method => :put do -%>
 
   <fieldset>
