@@ -10,9 +10,9 @@ The benefits of storing configuration in the database are:
 
 This is particularly useful for open source projects, where application settings shouldn't be stored in source code.
 
-It's designed to be as simple to use and get up and running, and to be flexible in that it's both end user and developer friendly.
+It's designed to be simple to use and get up and running, and to be flexible in that it's both end user and developer friendly.
 
-Although all config variables are ultimately stored in the database, you can set sensible defaults in a configuration file in the source code.
+Although all config variables are ultimately stored in the database, you can set sensible defaults in a configuration file.
 
 Installation
 ============
@@ -27,7 +27,7 @@ Or as a gem. Add this to your environment.rb:
 
     config.gem 'behavior'
 
-Generate the migration and sample behavior.yml:
+Then generate the migration and sample behavior.yml:
 
     ./script/generate behavior
 
@@ -45,14 +45,14 @@ For example, if you wanted to have access to a config variable "site_title", put
     site_title:
       default:
   
-Now, within your app controllers and views, you can access `config[:site_title]`. In your models, you can access `Behavior.config`.
+Now, within your app controllers and views, you can access `config[:site_title]`. In your models, you can access `Behavior.config[:site_title]`.
 
 If you want to update the config, call `config.update(:site_title => "My New Title")`
 
 Web Interface
 =============
 
-behavior comes with a web interface that is available to your app straight away at `http://localhost:3000/admin/config`.
+Using Rails' Engines feature, behavior comes with a web interface that is available to your app straight away at `http://localhost:3000/admin/config`.
 
 By default, this comes with no styling, but you can create a layout in `app/layouts/admin.html.erb`, or set a layout by setting `Behavior::Setting.layout`
 
