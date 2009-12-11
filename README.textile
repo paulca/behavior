@@ -1,7 +1,92 @@
 h1. Behavior
 
-Behaviour is a plugin for storing application configuration in the database.
+Behavior is a Ruby on Rails plugin for storing application configuration variables in the database. You can use it to store things like a Site's Title, description and keywords, or for user definable things like a currency exchange rate, or minimum and maximum values.
 
+The benefits of storing configuration in the database are:
+
+- End users can easily edit the values
+- Configuration is decoupled from the codebase
+
+This is particularly useful for open source projects, where application settings shouldn't be stored in source code.
+
+It's designed to be as simple to use and get up and running, and to be flexible in that it's both end user and developer friendly.
+
+Although all config variables are ultimately stored in the database, you can set sensible defaults in a configuration file in the source code.
+
+h2. Installation
+
+Behavior is easy to install.
+
+As a plugin:
+
+<pre><code>./script/plugin install git://github.com/paulca/behavior.git</code></pre>
+
+Or as a gem. Add this to your environment.rb:
+
+<pre><code>config.gem 'behavior'</code></pre>
+
+Generate the migration and sample behavior.yml:
+
+<pre><code>./script/generate behavior</code></pre>
+
+And run the migration:
+
+<pre><code>rake db:migrate</code></pre>
+
+h2. Basic Usage
+
+There are two parts to how behavior works. First of all there is a config file, config/behavior.yml. This file controls the variables that are allowed to be set in the app.
+
+For example, if you wanted to have access to a config variable "site_title", put this in behavior.yml:
+
+<pre><code>site_title:
+  default: My Site</code></pre>
+  
+Now, within your app, you can access <pre><code>config[:site_title]</code></pre>.
+
+If you want to update the config, call <pre><code>config.update(:site_title => "My New Title")</code></pre>
+
+h2. Web Interface
+
+behavior comes with a web interface that is available to your app straight away at <pre><code>http://localhost:3000/admin/config</code></pre>.
+
+By default, this comes with no styling, but you can create a layout in <pre><code>app/layouts/admin.html.erb</code></pre>, or set a layout by setting <pre><code>Behavior::Setting.layout</code></pre>
+
+For example, to use your standard application layout, create a <pre><code>config/initializers/behavior.rb</code></pre> like this:
+
+<pre><code>Behavior::Settings.layout = 'application'</code></pre>
+
+You can also add before_filters to protect the controller from outsiders:
+
+<pre><code>Behavior::Settings.before_filters << 'require_admin_user'</code></pre>
+
+If you want to control how the fields in the admin interface appear, you can add additional params in your behavior.yml file:
+
+<pre><code>site_title:
+  name: Name of Your Site   # sets the edit label
+  default: My Site          # sets the default value
+  type: string              # uses input type="text"
+  
+site_description:
+  name: Describe Your Site  # sets the edit label
+  default: My Site          # sets the default value
+  type: text                # uses textarea
+  
+secret:
+  name: A Secret Passphrase # sets the edit label
+  default: passpass         # sets the default value
+  type: password            # uses input type="password"
+</code></pre>
+
+h2. Running the tests
+
+You can run the tests by checking out the code into vendor/plugins of a Rails app and running:
+
+<pre><code>rake</code></pre>
+
+It also comes with a set of cucumber features:
+
+<pre><code>cucumber</code></pre>
 
 h2. About me
 
