@@ -11,5 +11,23 @@
 # 'name' is the name that appears in the edit form
 # 
 # 'type' can be 'string' for a text field, 'password' for a password field or 'text' for a text area
+#   'type' defaults to 'string'
 # 
 # 'default' is the default value to use if there's no entry in the database. Otherwise, nil will be returned
+# 
+# Some Examples:
+#   
+# site_title:
+#   name: Site Title
+#   default: My Site
+#   type: string
+#   
+# site_description:
+#   name: Description for Google
+#   default: Lots of Awesomeness Here
+#   type: text
+#   
+# secret:
+#   name: Secret Password for Accessing Secret Areas
+#   default: secret
+#   type: password
