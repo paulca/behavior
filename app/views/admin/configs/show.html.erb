@@ -10,7 +10,7 @@
 
   <fieldset>
     <%- @configs.each do |conf| -%>
-      <%= label_tag(conf, (config.meta[conf][:name] || conf))  %>
+      <%= label_tag(conf, (config.meta[conf][:name]))  %>
       <%= behavior_tag(conf) %> <br />
     <%- end -%>
   </fieldset>

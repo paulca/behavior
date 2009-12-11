@@ -7,6 +7,7 @@ Feature: Editing Configuration
     Given I am on the configuration page
     Then I should see "Site Admin"
       And I should see "Email Address"
+      And I should see "Email name"
     
     When I fill in "Email Address" with "paul@rslw.com"
       And I press "Save"
