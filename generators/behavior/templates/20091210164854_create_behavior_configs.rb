@@ -2,7 +2,7 @@ class CreateBehaviorConfigs < ActiveRecord::Migration
   def self.up
     create_table :behavior_configs, :force => true do |t|
       t.string :key
-      t.string :value
+      t.text :value
       t.timestamps
     end
     
