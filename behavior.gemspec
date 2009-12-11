@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
      "app/models/behavior_config.rb",
      "app/views/admin/configs/show.html.erb",
      "app/views/layouts/admin.html.erb",
+     "behavior.gemspec",
      "config/behavior.yml",
      "config/routes.rb",
      "features/admin_configs.feature",
