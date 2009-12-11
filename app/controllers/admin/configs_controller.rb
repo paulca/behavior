@@ -5,6 +5,8 @@ class Admin::ConfigsController < ApplicationController
     before_filter filter
   end
   
+  helper :behavior
+  
   def show
     @configs = config.all
   end
