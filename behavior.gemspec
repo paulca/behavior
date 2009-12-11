@@ -11,11 +11,8 @@ Gem::Specification.new do |s|
   s.authors = ["Paul Campbell"]
   s.date = %q{2009-12-11}
   s.email = %q{paul@rslw.com}
-  s.extra_rdoc_files = [
-    "README.textile"
-  ]
   s.files = [
-    "README.textile",
+    "README.md",
      "Rakefile",
      "app/controllers/admin/configs_controller.rb",
      "app/helpers/behavior_helper.rb",
