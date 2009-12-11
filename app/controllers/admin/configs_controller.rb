@@ -10,9 +10,7 @@ class Admin::ConfigsController < ApplicationController
   end
   
   def update
-    config.all.each do |conf|
-      config.update(params[:conf])
-    end
+    config.update(params[:conf])
     flash[:notice] = "Config Changes Saved"
     redirect_to admin_config_path
   end

@@ -34,7 +34,7 @@ module Behavior
     
     def update(attrs = {})
       attrs.each do |key,value|
-        result = BehaviorConfig.find_by_key(key.to_s)
+        result = BehaviorConfig.find_or_create_by_key(key.to_s)
         result.update_attribute(:value, value) if result
       end
     end

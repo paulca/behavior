@@ -10,4 +10,5 @@ Feature: Editing Configuration
     
     When I fill in "Email Address" with "paul@rslw.com"
       And I press "Save"
+    Then the "Email Address" field should contain "paul@rslw.com"
     Then I should see "Config Changes Saved"
