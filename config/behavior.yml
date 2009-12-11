@@ -7,3 +7,13 @@ email_name:
   default: Site Administrator
   type: string
   name: Email Name
+  
+password:
+  default: password
+  type: password
+  name: Password
+  
+description:
+  default: My Awesome Site
+  type: text
+  name: Description

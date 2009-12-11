@@ -2,7 +2,6 @@ require File.dirname(__FILE__) + '/spec_helper'
 
 describe Behavior do
 
-  load_schema
   include Behavior
   
   before do
@@ -20,7 +19,7 @@ describe Behavior do
     end
 
     it "should give me all the keys" do
-      config.all.should == ["email_name","email_address"]
+      config.all.should == ["email_name", "email_address", "description", "password"]
     end
     
     it "should get me my value" do
