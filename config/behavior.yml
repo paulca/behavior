@@ -6,7 +6,6 @@ email_address:
 email_name:
   default: Site Administrator
   type: string
-  name: Email Name
   
 password:
   default: password
