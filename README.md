@@ -95,8 +95,8 @@ It also comes with a set of cucumber features:
 About me
 ========
 
-I'm Paul Campbell. I'm an avid Ruby on Rails web developer. Follow my ramblings at "http://www.pabcas.com":http://www.pabcas.com
+I'm Paul Campbell. I'm an avid Ruby on Rails web developer. Follow my ramblings at [http://www.pabcas.com](http://www.pabcas.com)
 
-Follow me on Twitter "http://twitter.com/paulca":http://twitter.com/paulca
+Follow me on Twitter [http://twitter.com/paulca](http://twitter.com/paulca)
 
 Copyright (c) 2009 Paul Campbell, released under the MIT license
