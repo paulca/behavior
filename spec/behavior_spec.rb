@@ -19,7 +19,7 @@ describe Behavior do
     end
 
     it "should give me all the keys" do
-      config.all.should == ["email_name", "email_address", "description", "password"]
+      config.all.should == ["price", "email_name", "value", "email_address", "description", "password"]
     end
     
     it "should get me my value" do
@@ -28,6 +28,10 @@ describe Behavior do
     
     it "should have a nice default" do
       config[:email_name].should == "Site Administrator"
+    end
+    
+    it "should set the number field to be a number" do
+      config[:value].should be_a_kind_of(Fixnum)
     end
   end
   

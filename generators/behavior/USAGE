@@ -4,4 +4,4 @@ Description:
     Also creates an empty config/behavior.yml to get you started
     
 Examples:
-    `./script/generate cucumber`
+    `./script/generate behavior`

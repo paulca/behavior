@@ -16,3 +16,13 @@ description:
   default: My Awesome Site
   type: text
   name: Description
+  
+value:
+  default: "10"
+  type: integer
+  name: Value
+  
+price:
+  default: "10.00"
+  type: decimal
+  name: Price

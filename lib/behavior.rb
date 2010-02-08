@@ -21,10 +21,18 @@ module Behavior
     end
     
     def [](key)
-      begin
+      out = begin
         BehaviorConfig.find_by_key(key.to_s).value
       rescue NoMethodError
         meta[key][:default]
+      end
+      case meta[key][:type]
+      when 'integer'
+        out.to_i
+      when 'decimal'
+        BigDecimal.new(out.to_s)
+      else
+        out
       end
     end
     
@@ -63,11 +71,10 @@ module Behavior
       end
       
       def before_filters=(filters)
-        @before_filters = filters
+        @before_filters ||= filters
       end
     end
   end
-  
 end
 
 ActionController::Base.send(:include, Behavior)
