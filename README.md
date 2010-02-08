@@ -80,6 +80,16 @@ If you want to control how the fields in the admin interface appear, you can add
       name: A Secret Passphrase # sets the edit label
       default: passpass         # sets the default value
       type: password            # uses input type="password"
+      
+    Value:
+      name: A number            # sets the edit label
+      default: 10               # sets the default value
+      type: integer             # coerces the value to an integer
+      
+    Price:
+      name: A price             # sets the edit label
+      default: "10.00"          # sets the default value
+      type: decimal             # coerces the value to a decimal
 
 Running the tests
 =================
