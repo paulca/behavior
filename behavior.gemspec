@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{behavior}
-  s.version = "0.1.2"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Paul Campbell"]
-  s.date = %q{2010-02-08}
+  s.date = %q{2010-02-22}
   s.email = %q{paul@rslw.com}
   s.files = [
     "CHANGELOG",
@@ -44,6 +44,7 @@ Gem::Specification.new do |s|
      "spec/schema.rb",
      "spec/spec_helper.rb"
   ]
+  s.has_rdoc = false
   s.homepage = %q{http://www.github.com/paulca/behavior}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
