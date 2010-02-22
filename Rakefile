@@ -25,7 +25,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name = "behavior"
-    s.version = "0.1.2"
+    s.version = "0.2.0"
     s.author = "Paul Campbell"
     s.email = "paul@rslw.com"
     s.homepage = "http://www.github.com/paulca/behavior"

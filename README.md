@@ -90,6 +90,15 @@ If you want to control how the fields in the admin interface appear, you can add
       name: A price             # sets the edit label
       default: "10.00"          # sets the default value
       type: decimal             # coerces the value to a decimal
+      
+    options:
+      name: Select Options
+      default: 1
+      type: select
+      options:
+        - [ One, 1 ]
+        - [ Two, 2 ]
+        - [ Three, 3 ]
 
 Running the tests
 =================
