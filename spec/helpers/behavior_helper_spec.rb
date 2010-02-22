@@ -18,5 +18,6 @@ describe BehaviorHelper do
   
   it "should give me a select field for options" do
     behavior_tag('options').should match(/select/)
+    behavior_tag('options').should match(/<option value="2">Two<\/option>/)
   end
 end
