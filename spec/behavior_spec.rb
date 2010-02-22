@@ -19,7 +19,7 @@ describe Behavior do
     end
 
     it "should give me all the keys" do
-      config.all.should == ["price", "email_name", "value", "email_address", "description", "password"]
+      config.all.should == ["price", "email_name", "value", "email_address", "description", "password", "options"]
     end
     
     it "should get me my value" do

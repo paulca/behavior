@@ -15,4 +15,8 @@ describe BehaviorHelper do
   it "should give me a text area field for text" do
     behavior_tag('description').should match(/textarea/)
   end
+  
+  it "should give me a select field for options" do
+    behavior_tag('options').should match(/select/)
+  end
 end

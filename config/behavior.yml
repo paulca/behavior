@@ -26,3 +26,12 @@ price:
   default: "10.00"
   type: decimal
   name: Price
+  
+options:
+  name: Select Options
+  default: 1
+  type: select
+  options:
+    - [ One, 1 ]
+    - [ Two, 2 ]
+    - [ Three, 3 ]
